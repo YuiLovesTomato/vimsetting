@@ -1,0 +1,50 @@
+set nocompatible        "be iMproved, required
+set shiftwidth=4        "for indent
+set smartindent
+set autoindent
+set number          "show row number
+set fileencoding=utf-8
+set tabstop=4
+
+filetype off            "required
+
+
+" set the runtime path to include vundle and initalize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+ 
+
+" let vundle manage Vundle, required;
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'scrooloose/syntastic'
+Plugin 'mattn/emmet-vim'
+Plugin 'itchyny/calendar.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'chrisbra/unicode.vim'
+
+ 
+
+" git
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
+
+
+" colorscheme
+Plugin 'YorickPeterse/happy_hacking.vim'
+Plugin 'w0ng/vim-hybrid'
+
+ 
+
+"settings
+let g:airline_powerline_fonts=1     "vim brach icon
+let g:ctrlp_custom_ignore = {
+    \ 'dir': '\.git$\|public$\|log$\|tmp$\|vendor$',
+    \ 'file': '\v\.(exe|so|dll)$'
+\ }
+
+call vundle#end()       "required
+filetype plugin indent on   "required
+
+color happy_hacking
