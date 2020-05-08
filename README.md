@@ -5,7 +5,9 @@ backup for .vimrc & (windows terminal)setting.json
 
 ## see
 background color: ubuntu violet(purple?)
+
 character there: Ako from BangDream!
+
 if you don't prefer the retro-like stuff, go to setting.json and remove that option. experimental blabla.
 
 ## how to use
