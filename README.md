@@ -1,6 +1,12 @@
 # vimsetting
 backup for .vimrc & (windows terminal)setting.json
 
+![preview](./Capture.PNG "아코쨘")
+
+## see
+background color: ubuntu violet(purple?)
+character there: Ako from BangDream!
+
 ## how to use
 >i. location:
   
