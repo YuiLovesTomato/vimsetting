@@ -1,5 +1,14 @@
 # vimsetting
-backup for vim setting, plugin files
+backup for .vimrc & (windows terminal)setting.json
+
+## how to use
+1. place .vimrc at "~/". so, "~/.vimrc".
+2. unzip RoamingState.zip at "C:\Users\[Your Account]\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\RoamingState"
+
+
+
+
+###memo
 
 //Learn Vimscript the Hard Way
 http://learnvimscriptthehardway.stevelosh.com/
