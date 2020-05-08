@@ -1,50 +1,72 @@
-set nocompatible        "be iMproved, required
-set shiftwidth=4        "for indent
-set smartindent
 set autoindent
-set number          "show row number
+set cindent
+"set cursorline
 set fileencoding=utf-8
+set hlsearch
+set shiftwidth=4		"for indent
+set showmatch
+set smarttab
+set smartindent
 set tabstop=4
+set nocompatible		"be iMproved, required
+set nu					"show row number
 
-filetype off            "required
-
+filetype off			"required
 
 " set the runtime path to include vundle and initalize
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
 
- 
+"markdown syntax setting (with git)
+augroup markdown
+	" remove previous autocmds
+	autocmd!
+	" set every new or read *.md buffer to use the markdown filetype
+	autocmd BufRead,BufNew *.md setf markdown
+augroup END
+
+" syntax highlighting
+if has("syntax")
+	syntax on
+endif
+
+" cursor at modified spot
+au BufReadPost *
+			\ if line("'\"") > 0 && line("'\"") <= line("$") |
+			\ exe "norm g`\"" |
+			\ endif
+
+call vundle#begin()
 
 " let vundle manage Vundle, required;
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'edkolev/promptline.vim'			"with terminal, not vim.
+Plugin 'surround.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'mattn/emmet-vim'
-Plugin 'itchyny/calendar.vim'
-Plugin 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'					"ctrl-p show dir
 Plugin 'chrisbra/unicode.vim'
-
- 
+"Plugin 'SirVer/ultisnips'				"autocomplete
 
 " git
-Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-fugitive'
-
+Plugin 'airblade/vim-gitgutter'			" :G to see git status
+Plugin 'tpope/vim-fugitive'				" no? this is git status? whatever...
 
 " colorscheme
 Plugin 'YorickPeterse/happy_hacking.vim'
 Plugin 'w0ng/vim-hybrid'
 
- 
-
 "settings
-let g:airline_powerline_fonts=1     "vim brach icon
+let g:airline_powerline_fonts=1		"vim branch icon
 let g:ctrlp_custom_ignore = {
-    \ 'dir': '\.git$\|public$\|log$\|tmp$\|vendor$',
-    \ 'file': '\v\.(exe|so|dll)$'
+	\ 'dir': '\.git$\|public$\|log$\|tmp$\|vendor$',
+	\ 'file': '\v\.(exe|so|dll)$'
 \ }
 
-call vundle#end()       "required
-filetype plugin indent on   "required
+call vundle#end()		"required
+filetype plugin indent on	"required
 
+let g:airline_theme = 'simple'
 color happy_hacking
+hi Normal guibg=NONE ctermbg=NONE
