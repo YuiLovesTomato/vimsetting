@@ -13,7 +13,7 @@ backup for .vimrc & (windows terminal)setting.json
 
 
 
-###memo
+##memo
 
 //Learn Vimscript the Hard Way
 http://learnvimscriptthehardway.stevelosh.com/
